@@ -22,12 +22,8 @@ h2 {
 }
 
 #generate {
-  /* background-color: #039be5;
-  border-radius: 8px;
-  color: #fff;
- 
-  margin: 20%; */
-  background-color: #4CAF50; /* Green */
+
+  background-color: blue;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -38,12 +34,8 @@ h2 {
 
 }
 #copy{
-  /* background-color: #039be5;
-  border-radius: 8px;
-  color: #fff;
  
-  margin: 20%; */
-  background-color: #4CAF50; /* Green */
+  background-color: blue;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -94,24 +86,11 @@ input:hover {
 
 .card {
  
-    margin: 0 auto; /* Added */
-    float: none; /* Added */
-    margin-bottom: 10px; /* Added */
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
     text-align: center;
-
-  /* background-color: #fff;
-  border: 1px solid #eceff1;
-  border-radius: 8px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0 1px 2px 0,
-    rgba(60, 64, 67, 0.15) 0 1px 3px 1px;
-  margin: 2%;
-  margin-top: 80px;
-  padding: 20px;
-  width: 46%;
-  overflow: hidden;
-  margin: auto; 
-  /* position: relative; */
-  float: left; */
+    float: left; */
 }
 
 .card::after {
@@ -125,22 +104,7 @@ input:hover {
   display: block;
   clear: both;
 }
- #gen {
- 
-  /* width: 75% */
-  /* margin-top: 20px;
-  font-weight: 700;
-  height: 10px; */
- 
-}
 
-#copy {
-  
-  /* margin-top: 20px; */
-  font-weight: 700;
-  height: 1.2em;
-  
-} */
 #user-password{
   border: dashed; 
 }

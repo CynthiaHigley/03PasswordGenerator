@@ -1,10 +1,7 @@
-// Generate a random password with the input provided by the user
+//take user input to create a secure password
 var resultEl = document.getElementById('password');
 var generateBtn = document.getElementById('generate');
 var copyBtn = document.getElementById('copy');
-// var message = document.getElementById('message')
-
-
 
 // Global Variables
 var lowerCaseEl,
@@ -18,7 +15,7 @@ uppercase,
 symbol,
 number;
 
-
+//variables used to create the arrays for the different characters depending on user's password needs 
 var masterPassword= '';
 var lowerCaseArr = 'abcdefghkjklmnopqrstuvwxyz';
 var upperCaseArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -26,21 +23,20 @@ var symbolArr = '!@#$%^&*()_+=/{}';
 var numberArr = '0123456789';
 
  
-// Click event to fire off the user prompts and gather user input to formulate the password functions
+// when the user clicks on the button to generate the password then this starts the process 
 generateBtn.addEventListener('click', generatePassword);
    
-// function to ask for users input and conditional logic
+// function that creates the password based upon user input 
 function generatePassword() {
-        var lengthEl = prompt("Pick a number between a 8 and 128 for the password length");
+        var lengthEl = prompt("Please select the desired password length using number between a 8 and 128.");
         var length = parseInt(lengthEl);
              if(length < 8 || length > 128 || !length) {
-                alert("Password Length Must be between 8 and 128 Characters")
-                
-                // return        
+                alert("Sorry you need to select a number between 8 and 128 Characters.")
+     
               } 
 
          // Asks user if they want to use lowercase letters
-         var lowerCaseEl = confirm("Would you like lower case characters?");
+         var lowerCaseEl = confirm("Will you need to have lower case characters in your password?");
          var lowercase = lowerCaseEl;
              if(lowerCaseEl) {           
                  masterPassword += lowerCaseArr.slice(0,8);    
@@ -48,7 +44,7 @@ function generatePassword() {
              }  
  
              // Asks user if they want to use uppercase letters
-             var upperCaseEl = confirm("Would you like upper case characters?");
+             var upperCaseEl = confirm("Will you need to have upper case characters in your password?");
              var uppercase = upperCaseEl;
              if(upperCaseEl) {   
                  masterPassword += upperCaseArr.slice(0,8);;   
@@ -56,7 +52,7 @@ function generatePassword() {
              }
  
              // Asks user if they want to use a symbol
-             var symbolEl = confirm("Would you like special characters?");
+             var symbolEl = confirm("Will you need to have any special characters in your password?");
              var symbol = symbolEl;
              if(symbolEl) {   
                  masterPassword += symbolArr.slice(0,8);          
@@ -65,7 +61,7 @@ function generatePassword() {
              }
  
              // Asks user if they want to a number
-             var numberEl = confirm("Would you like numbers?");
+             var numberEl = confirm("Will your password require any numbers?");
              var number = numberEl;
              if(numberEl) { 
                  masterPassword += numberArr.slice(0,8);                             
@@ -73,25 +69,24 @@ function generatePassword() {
              }
              // User must select at least 1 character option or the generate function will be called again
              if (!lowerCaseEl && !upperCaseEl && !numberEl && !symbolEl) {
-                 alert("You must select at least one option for password characters.")
-                //  generatePassword();          
+                 alert("Please select either lower, uppercase, numbers or special characters to create your password.")      
          };
        
              resultEl = newPassword(length, masterPassword);
 }
  
-//Password Generation Function
+//assign the results of the function to newPassword 
 newPassword = function (length, masterPassword) {
     var resultEl = document.getElementById('password');
-    //Iniitalize     final password as blank string
+    //Iniitalize     
     let userPassword = '';
     console.log(length);
-    //Append random character from the masterPassword 
+    //Loop through the number of of characters the user desires and create random characters to create the password with the correct parameters
     for (let i = 0; i < length; i++) {
         userPassword += masterPassword.charAt(Math.floor(Math.random() * masterPassword.length))
     };
-    console.log(userPassword);
-   
+    // console.log(userPassword);
+    //display results of the new password created on the screen 
     resultEl.innerHTML = userPassword ;
    
 
@@ -102,27 +97,21 @@ function copyClip() {
     var copyBtn = document.getElementById("password");
   
 
-    //Select the textarea
+    //grab contents of textarea 
     copyBtn.select();
     copyBtn.setSelectionRange(0, 99999); 
   
-    //Copy the text inside the textarea
+    //Copy textarea 
     document.execCommand("copy");
   
-    // logic to display message
+    //if the user tries to click copy button before creating the password it will throw up an error otherwise it will copy it 
     if (copyBtn.innerHTML === '') {
             setMessage('You must generate a password first!', 'red')
         } else 
             setMessage('Copied to the clipboard', 'green')
         };
       
- 
-// Will flash a success alert if copied to clipboard or failed alert  and will time out after 3 seconds
-function setMessage(msg, color) {
-        message.style.color = color
-        message.textContent = msg;
 
-}
 
 
     
