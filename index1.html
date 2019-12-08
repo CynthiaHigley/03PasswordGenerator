@@ -13,43 +13,58 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </head>
   <body>
-      <div class="jumbotron">
+      <div class="jumbotron" height:100px>
+        <div class="text-center">
           <h1 class="display-4">Password Generator</h1>
           <p class="lead">You can use this site to generate a more secure password.</p>
-          
+          </div>
         </div>
    
- 
+        <div class="text-center">
+
     <div class="clearfix">
-      <div class="card">
+        <div class="col d-flex justify-content-center">
+      <div class="card" style="width: 50rem;">
+        
 
         <h2>Generate a Password</h2>
         <hr>
         <form >
-          <!-- <textarea class="user-password" style: dashed rows="8" cols="60" >
-               Your Secure Password 
-          </textarea> -->
-          <textarea  class="rounded text-center p-4" rows="6" readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password">
+       
+          <textarea  class="rounded text-center p-4" rows="6" readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password" >
 
           </textarea>
-          <div id="gen">
-          <!-- <button id="generate-password">Generate Password</button>
-          <button id=" copy-clipboard">Copy To Clipboard </button> -->
-          <button type="button" id="generate">Generate Password</button>
-          <button type="button" id="copy">Copy To Clipboard </button>
-        <!-- </div> -->
-          <!-- <div id="copy"> -->
-         
-        </div>
+          <!-- div to hold the buttons  -->
+          <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                    <button type="button" class="btn btn-primary" id="generate" >Generate 
+                        Password</button>
+                </div>
+                <div class="col-sm">
+                    <button type="button"  class="btn btn-primary" id="copy" >Copy To 
+                        Clipboard </button>   
+                </div>
+                
+              </div>
+            </div>
+          <!-- <div id="gen" >
+           
+            <button type="button" class="btn btn-primary" id="generate" text-width: 20%>Generate 
+              Password</button>
+            <button type="button"  class="btn btn-primary" id="copy" text-width: 20%>Copy To 
+              Clipboard </button>    
+        
+        </div> -->
         </form>
+        </div>
       </div>
-
- 
+      <hr>
+      <footer id="footer"><p>Boot Camp exercise 3 - Generating a Password </p> </footer>
     </div>
     <script src="./assets/java/script.js"></script>
-    
-     <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
     
   </body>
+ 
 </html>
