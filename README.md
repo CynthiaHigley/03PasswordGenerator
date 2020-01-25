@@ -2,6 +2,7 @@
 password generator 
 URL for git hub https://cynthiahigley.github.io/03PasswordGenerator/
 https://github.com/CynthiaHigley/03PasswordGenerator
+screen shot "./assets/css/images/screenShotPasswordGenerator.png"
 
 index.html 
 declares the libraries for bootstap, css, and javascript so that we can reference attributes, functions and then the website functional 
@@ -33,6 +34,6 @@ that info so they can enter it some where else.
 
 style.css
 set attributes that I was unable to set using bootstrap 
-jumbotron drove me nuts trying to get the height to a logical size 
+jumbotron header 
 
-I was unsure how to get a graphic in a md file so I included a screen shot of my work located in my CSS folder 
+
